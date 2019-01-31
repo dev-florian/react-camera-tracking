@@ -35,10 +35,7 @@ class googlyEyes extends Component {
                 height: window.innerHeight,
                 showAngleIndicator: true
             }
-
         });
-
-        // window.addEventListener()
 
         this.startEngine();
         this.createEye();
@@ -57,25 +54,6 @@ class googlyEyes extends Component {
         let gravity = this.engine.world.gravity;
         gravity.x = -x;
         gravity.y = y;
-    }
-
-    updateGravity(event){
-            let orientation = typeof window.orientation !== 'undefined' ? window.orientation : 0,
-                gravity = this.engine.world.gravity;
-
-            if (orientation === 0) {
-                gravity.x = Common.clamp(event.gamma, -90, 90) / 90;
-                gravity.y = Common.clamp(event.beta, -90, 90) / 90;
-            } else if (orientation === 180) {
-                gravity.x = Common.clamp(event.gamma, -90, 90) / 90;
-                gravity.y = Common.clamp(-event.beta, -90, 90) / 90;
-            } else if (orientation === 90) {
-                gravity.x = Common.clamp(event.beta, -90, 90) / 90;
-                gravity.y = Common.clamp(-event.gamma, -90, 90) / 90;
-            } else if (orientation === -90) {
-                gravity.x = Common.clamp(-event.beta, -90, 90) / 90;
-                gravity.y = Common.clamp(event.gamma, -90, 90) / 90;
-            }
     }
 
     onResize(){
@@ -108,10 +86,6 @@ class googlyEyes extends Component {
     }
 
     startEngine() {
-        //ON INITIE LE RENDU
-        // Render.run(this.render);
-        // this.runner = Runner.create();
-        // Runner.run(this.runner, this.engine);
         this.draw();
 
     }
