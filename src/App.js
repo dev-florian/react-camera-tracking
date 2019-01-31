@@ -27,6 +27,7 @@ class App extends Component {
                 <div className="info">
                     <div className="mds"><img src={mds}/></div>
                     <p> - Réalisation dans un cadre scolaire - </p>
+                    <p> -- By Florian Thubé -- </p>
                     <div onClick={this.deleteInfo} className="croix">X</div>
                 </div>
                 <button onClick={() => this.takePicture()}>PICTURE</button>
